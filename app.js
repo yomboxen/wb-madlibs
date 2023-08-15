@@ -63,6 +63,14 @@ app.get('/game', (req, res) => {
 })
 
 app.get('/madlib', (req, res) => {
-  res.render('madlib.html.njk') 
-  
+  const person = req.query.person
+  const color = req.query.color
+  const noun = req.query.noun
+  const adjective = req.query.adjective
+  res.render('madlib.html.njk', {
+    person: person,
+    color: color,
+    noun: noun,
+    adjective: adjective
+  }) 
 })
